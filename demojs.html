@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+<script>
+    function addition()
+    {
+        var a=10,b=5;
+        document.getElementById("output").innerHTML=a+b;
+    }
+    function subtraction()
+    {
+        var a=10,b=5;
+        document.getElementById("output").innerHTML=a-b;
+    }
+    function multiply()
+    {
+        var a=10,b=5;
+        document.getElementById("output").innerHTML=a*b;
+    }
+    function divide()
+    {
+        var a=10,b=5;
+        document.getElementById("output").innerHTML=a/b;
+    }
+    function modulo()
+    {
+        var a=10,b=5;
+        document.getElementById("output").innerHTML=a%b;
+    }
+    function calc()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(x==y);
+    }
+    function calc1()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(x==z);
+    }
+    function calc2()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(y==z);
+    }
+    function calc3()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(x===y);
+    }
+    function calc4()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(x===z);
+    }
+    function calc5()
+    {
+        var x=10,  y='10.0', z='10';
+        document.getElementById("output1").innerHTML=(y===z);
+    }
+</script>
+<body>
+    <h2 >a=10 and b=5</h1>
+    <button onclick="addition()">Addition</button>
+    <button onclick="subtraction()">subtraction</button>
+    <button onclick="multiply()">multiply</button>
+    <button onclick="divide()">divide</button>
+    <button onclick="modulo()">modulo</button>
+    <h3 style="border: 1px solid black;width: 100px;" id="output">output</h3>
+    <h2>var x=10, var y='10.0',var z='10'</h1>
+    <button onclick="calc()">x==y (10=='10.0')</button>
+    <button onclick="calc1()">x==z (10=='10')</button>
+    <button onclick="calc2()">y==z ('10.0'=='10')</button>
+    <button onclick="calc3()">x===y (10==='10.0')</button>
+    <button onclick="calc4()">x===z (10==='10')</button>
+    <button onclick="calc5()">y===z ('10.0'==='10')</button>
+    <h3 style="border: 1px solid black;width: 100px;" id="output1">output</h3>
+</body>
+</html>

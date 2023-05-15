@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ProgrammingWithJs</title>
+</head>
+<script>
+    function discountCalculator(week)
+    {
+        var discount=[15,10,12,11,13,14,15];
+        var result=0;
+        let text = document.getElementById("InputPrice").value;
+        let myArray = text.split(",");
+        let Price = myArray[0];
+        var discountPrice=Price*(discount[week]/100.0);
+        let oldArray=JSON.parse(JSON.stringify(myArray));
+        myArray[0]=(Price-discountPrice);
+        myArray.forEach(element => {result+=Number(element)
+            
+        });
+        document.getElementById("output").innerHTML="Actual Prices are:"+oldArray+"<br>Discount Prices are:"+myArray+"<br>Total :"+result;
+
+    }
+    function AdmissionCalc()
+    {
+        var Marks=document.getElementById("InputMarks").value;
+        console.log(Marks);
+        if(Marks<50)
+        {
+            document.getElementById("AcceptStatus").innerHTML="Admission Application Rejected";
+            document.getElementById("AcceptStatus").style.color="red";
+        }
+        else if(Marks>=50 && Marks<70)
+        {
+            document.getElementById("AcceptStatus").innerHTML="Acceptable to admit";
+            document.getElementById("AcceptStatus").style.color="orange";
+
+        }
+        else if(Marks>=70 && Marks<90)
+        {
+            document.getElementById("AcceptStatus").innerHTML="Good to admit";
+            document.getElementById("AcceptStatus").style.color="#ccdb46";
+        }
+        else if(Marks>=90)
+        {
+            document.getElementById("AcceptStatus").innerHTML="Outstanding to admit";
+            document.getElementById("AcceptStatus").style.color="green";
+
+        }
+        else
+        {
+            document.getElementById("AcceptStatus").innerHTML="Incorrect Input";
+
+        }
+    }
+    function MallGifts()
+    {
+        var InputPurchasePrice=document.getElementById("InputPurchase").value
+        var InputVisits=document.getElementById("InputVisit").value
+        var result=0;
+        if(InputVisits>0)
+        {
+            result+=100;
+        }
+        if(InputPurchasePrice>5000)
+        {
+            result+=3000;
+        }
+        else if(InputPurchasePrice>3000)
+        {
+            result+=1500;
+        }
+        else if(InputPurchasePrice>1000)
+        {
+            result+=500;
+        }
+        else
+        {
+            result+=0;
+        }
+        document.getElementById("Gifts").innerHTML="You Won Welcome Gift of :"+result;
+    }
+</script>
+<body>
+    <div>
+        <details>
+        <summary><b>Question 1</b></summary>
+            <p>Platina Bakery is celebrating the platinum year since its founding and as an offer to its customers it has announced a week offer for its customers who are buying any items irrespective of the price:
+            <br>
+            For the next week starting from tomorrow there is a discount for everyday:
+            <br>
+            MONDAY    - 15%<br>
+            TUESDAY   - 10%<br>
+            WEDNESDAY - 12%<br>
+            THURSDAY  - 11%<br>
+            FRIDAY    - 13%<br>
+            SATURDAY  - 14%<br>
+            SUNDAY    - 15%<br>
+            <br>
+            One customer can submit only one bill and if customer submits many bills, only first bill of the day will be taken into account.
+            </p>
+        </details>
+        <label for="InputPrice">Price</label>
+        <input id="InputPrice" type="text" value="0"/>
+        <button onclick="discountCalculator(0)">Monday</button>
+        <button onclick="discountCalculator(1)">Tuesday</button>
+        <button onclick="discountCalculator(2)">Wednesday</button>
+        <button onclick="discountCalculator(3)">Thursday</button>
+        <button onclick="discountCalculator(4)">Friday</button>
+        <button onclick="discountCalculator(5)">Saturday</button>
+        <button onclick="discountCalculator(6)">Sunday</button>
+        <h3 style="border: 1px solid black;width: 500px;" id="output">Output</h3>
+    </div>
+    <div>
+        <details>
+            <summary><b>Question 2</b></summary>
+                <p>Bharat school is 150 year old school and year on year parents come in big numbers to get admission for their children. This year also the school has conducted an entrance exam for admission for various classes. The students have completed their exam and based on the marks they received they wanted to know the admission status for their application.
+                    <br>
+                    Below 50 - Admission Application Rejected<br>
+                    50 to 70 - Acceptable to admit<br>
+                    70 to 90 - Good to admit<br>
+                    Above 90 - Outstanding to admit<br>
+                    <br>
+                Ask the parent to enter the entrance exam marks of their children and let the parents know the status of the application for the admission.
+            </p>
+            </details>
+        <input id="InputMarks" type="number" value="0"/>
+        <button onclick="AdmissionCalc()">Result</button>
+        <h3 style="border: 1px solid black;width: 500px;" id="AcceptStatus">Output</h3>
+        
+    </div>
+    <div>
+        <details>
+            <summary><b>Question 3</b></summary>
+                <p>A new shopping mall has been opened in the city. To attract people and to bring in crowd, the mall has announced some schemes. 
+                    <br>If a person is visiting a shop atleast once, they will be given a welcome gift of 100GV.<br>
+                    If the cost of any purchased items value is more than 1000, a 500 GV will be given.<br>
+                    If the cost of any purchased items value is more than 3000, a 1500 GV will be given.<br>
+                    If the cost of any purchased items value is more than 5000, a 3000 GV will be given.<br>
+                    <br>
+                    Based on the user visits and purchase, give the gifts to the people. </p>
+            </details>
+        <label for="InputVisit">No. of Visits</label>
+        <input id="InputVisit" type="number" value="0"/><br>
+        <label for="InputPurchase">Purchase Price</label>
+        <input id="InputPurchase" type="number" value="0"/><br>
+        <button onclick="MallGifts()">Result</button>
+        <h3 style="border: 1px solid black;width: 500px;" id="Gifts">Output</h3>
+    </div>
+</body>
+</html>
