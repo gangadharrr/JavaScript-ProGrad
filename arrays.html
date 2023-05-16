@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        let array1=[1,2,3];
+        let array2=[[1,2],[3,4],[5,6,7,8,9,10]];
+        console.log("Length:",array1.length);
+        const trainerdetail=new Object();
+            trainerdetail.trainer="Arun";
+            trainerdetail.company="Prograd";
+            trainerdetail.Programming="JS";
+        for(let i in array2 )
+        {
+            for(let j in array2[i])
+            {
+                console.log(array2[i][j]);
+            }
+        }
+        for(let i in trainerdetail)
+        {
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
